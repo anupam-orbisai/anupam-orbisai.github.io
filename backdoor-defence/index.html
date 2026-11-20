@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Statistic and Weight Channels in Composed Federated-Learning Defenses</title>
+<style>
+  body { max-width: 760px; margin: 3rem auto; padding: 0 1.25rem; font: 17px/1.6 Georgia, "Times New Roman", serif; color: #222; }
+  h1 { font-size: 1.6rem; line-height: 1.3; margin-bottom: .3rem; }
+  .meta { color: #555; margin-top: 0; }
+  .links a { display: inline-block; margin: .2rem 1rem .2rem 0; padding: .35rem .8rem; border: 1px solid #2a78d6; border-radius: 4px; color: #2a78d6; text-decoration: none; font-family: system-ui, sans-serif; font-size: .95rem; }
+  .links a:hover { background: #2a78d6; color: #fff; }
+  h2 { font-size: 1.15rem; margin-top: 2rem; }
+  p { text-align: justify; }
+</style>
+</head>
+<body>
+<h1>Statistic and Weight Channels in Composed Federated-Learning Defenses</h1>
+<p class="meta">Anonymous authors &middot; Preprint</p>
+<p class="links">
+  <a href="paper.pdf">Paper (PDF)</a>
+  <a href="supplementary.pdf">Supplement (PDF)</a>
+</p>
+<h2>Abstract</h2>
+<p>Defenses for federated learning are increasingly stacked: a per-client transform such as clipping or reweighting runs before a robust aggregator. When such a stack suppresses an attack, evaluations usually credit the aggregator, often after checking that the transform preserves the statistic the aggregator reads. We show that an upstream transform reaches attack success through two channels. The statistic channel changes which clients or coordinates the aggregator selects. The weight channel changes how much the selected updates contribute, and bypasses the statistic entirely. The standard ablation, which compares the stack against the aggregator alone, measures only their sum. We give a control that separates the two using only the raw and transformed updates, so it needs no knowledge of which clients are malicious. We also characterize which aggregator statistics are invariant to per-client rescaling, which predicts where the statistic channel is closed. On CIFAR-10 with ten clients the two channels can point in opposite directions: for coordinate-wise median under a backdoor, the ablation reports a rise in attack success of 0.125, which separates into a fall of 0.172 through the statistic channel and a rise of 0.297 through the weight channel. Under a deployed reweighting into Krum the statistic channel carries the effect instead. With FoolsGold in front of coordinate-wise median, a deployed defense that needs no oracle, the two channels again point in opposite directions. Evaluations of composed defenses should report both channels.</p>
+</body>
+</html>
